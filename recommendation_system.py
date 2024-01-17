@@ -21,12 +21,14 @@ def send_welcome(message):
 def handle_image(message):  
     bot.reply_to(message, "Thanks for inserting a picture of your shoe! Give me a while to find you shoes you might like... " )
     photo = message.photo[-1]
+    bot.reply_to(message, photo)
     file_id = photo.file_id
 
     file_info = bot.get_file(file_id)
     downloaded_file = bot.download_file(file_info.file_path)
     
     processed_image = process_single_image(downloaded_file)
+    bot.reply_to(message, processed_image)
 
     file_converter = File_ColorConverter(processed_image)
     colours = file_converter.get_most_prevalent_colors()
