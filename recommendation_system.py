@@ -5,13 +5,14 @@ from colourconverter import File_ColorConverter
 from ktrees import similiar_shoes
 from config import bot_key
 
+
+bot = telebot.TeleBot(bot_key)
+
 def process_single_image(input_image):
     output_data = remove(input_image)
 
     return output_data
     
-bot = telebot.TeleBot(bot_key)
-
 @bot.message_handler(commands=['start', 'hello'])
 def send_welcome(message):
     bot.reply_to(message, "Hello! I'm YourNikeShoe and I'll recommend other shoes that look just like me! Please insert a picture of any shoe.")
