@@ -31,7 +31,6 @@ def handle_image(message):
     
     file_converter = File_ColorConverter(processed_image)
     colours = file_converter.get_most_prevalent_colors()
-    bot.reply_to(colours)
     shoes = similiar_shoes(colours)
 
     
