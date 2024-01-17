@@ -23,7 +23,6 @@ def process_single_image(input_image):
 def handle_image(message):  
     bot.reply_to(message, "Thanks for inserting a picture of your shoe! Give me a while to find you shoes you might like... " )
     photo = message.photo[-1]
-    bot.reply_to(message, photo)
     file_id = photo.file_id
 
     file_info = bot.get_file(file_id)
