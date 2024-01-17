@@ -32,9 +32,9 @@ def handle_image(message):
     
     file_converter = File_ColorConverter(processed_image)
     colours = file_converter.get_most_prevalent_colors()
-    bot.reply_to(message, colours)
+    bot.reply_to(colours)
     shoes = similiar_shoes(colours)
-    bot.reply_to(message, shoes)
+
     
 
     for shoe in shoes:
