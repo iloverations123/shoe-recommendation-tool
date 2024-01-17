@@ -30,8 +30,11 @@ def handle_image(message):
     processed_image = process_single_image(downloaded_file)
     
     file_converter = File_ColorConverter(processed_image)
+    bot.reply_to(message, file_converter)
     colours = file_converter.get_most_prevalent_colors()
+    bot.reply_to(message, colours)
     shoes = similiar_shoes(colours)
+    bot.reply_to(message, shoes)
 
     
 
