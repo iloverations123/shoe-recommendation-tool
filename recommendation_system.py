@@ -28,7 +28,6 @@ def handle_image(message):
     downloaded_file = bot.download_file(file_info.file_path)
     
     processed_image = process_single_image(downloaded_file)
-    bot.reply_to(message, processed_image)
     
     file_converter = File_ColorConverter(processed_image)
     bot.reply_to(message, file_converter)
